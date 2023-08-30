@@ -12,13 +12,13 @@
 #' @export
 #'
 #' @examples
-#' dateUI()
-dateUI <- function(tabTitle ='日期过滤',
+#' researchUI()
+researchUI <- function(tabTitle ='研发订单',
                        colTitles =c('操作区域','操作区域','显示区域'),
                        widthRates =c(6,6,12),
-                       func_left = dateUI_left,
-                       func_right =dateUI_right,
-                       func_bottom = dateUI_bottom
+                       func_left = researchUI_left,
+                       func_right =researchUI_right,
+                       func_bottom = researchUI_bottom
 ) {
   
   #三栏式设置，可以复制
@@ -37,16 +37,13 @@ dateUI <- function(tabTitle ='日期过滤',
 #' @export
 #'
 #' @examples
-#' dateUI_left()
-dateUI_left <- function() {
+#' researchUI_left()
+researchUI_left <- function() {
   
   
   res <- tagList(
-    tsui::layout_2C(x = tsui::mdl_text(id = 'txt_date_FCustName',label = '请输入客户名称',value = 'ZANHANG S.A.'),
-                    y=NULL
-    ),
-    tsui::layout_2C(x = tsui::mdl_date(id = 'txt_date_FStartDate',label = '开始日期'),
-                    y=tsui::mdl_date(id = 'txt_date_FEndDate',label = '结束日期')
+    tsui::layout_2C(x = tsui::mdl_text(id = 'txt_research_FBillNO',label = '请输入单据编号',value = 'XSDD-100-230818-001'),
+                    y=tsui::mdl_text(id = 'txt_research_FRdNumber',label = '请输入项目号',value = '')
     )
     
     
@@ -62,10 +59,10 @@ dateUI_left <- function() {
 #' @export
 #'
 #' @examples
-#' dateUI_bottom()
-dateUI_right <- function() {
+#' researchUI_bottom()
+researchUI_right <- function() {
   res <- tagList(
-    shinyWidgets::actionBttn(inputId = 'dl_saleOrderTable_date_query',label = '汇总日期过滤')
+    shinyWidgets::actionBttn(inputId = 'dl_saleOrderTable_research_query',label = '研发订单')
     
     
   )
@@ -80,10 +77,10 @@ dateUI_right <- function() {
 #' @export
 #'
 #' @examples
-#' dateUI_bottom()
-dateUI_bottom <- function() {
+#' researchUI_bottom()
+researchUI_bottom <- function() {
   res <- tagList(
-    tsui::uiScrollX(tsui::mdl_dataTable(id = 'dt_saleOrderTable_date_query',label = '结果显示'))
+    tsui::uiScrollX(tsui::mdl_dataTable(id = 'dt_saleOrderTable_research_query',label = '结果显示'))
   )
   return(res)
   

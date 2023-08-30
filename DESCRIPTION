@@ -11,7 +11,9 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Collate: 
-    'demo.R'
-    'button.R'
-    'text.R'
+    'organization.R'
+    'customer.R'
+    'research.R'
     'date.R'
+    'note.R'
+    'day.R'
